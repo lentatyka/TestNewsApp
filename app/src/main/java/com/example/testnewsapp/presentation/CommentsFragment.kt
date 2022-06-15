@@ -15,6 +15,6 @@ class CommentsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_posts, container, false)
+        return inflater.inflate(R.layout.fragment_comments, container, false)
     }
 }
