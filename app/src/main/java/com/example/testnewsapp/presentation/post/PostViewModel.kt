@@ -7,6 +7,7 @@ import com.example.testnewsapp.common.State
 import com.example.testnewsapp.data.post.Post
 import com.example.testnewsapp.domain.post.GetPostUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.scopes.FragmentScoped
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -27,7 +28,7 @@ class PostViewModel @Inject constructor(
     val state: SharedFlow<State<List<Post>>> = _state.asSharedFlow()
 
     init {
-
+        getPosts()
     }
 
     fun getPosts(){
