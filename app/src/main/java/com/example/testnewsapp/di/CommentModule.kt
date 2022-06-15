@@ -1,9 +1,9 @@
 package com.example.testnewsapp.di
 
 import com.example.testnewsapp.common.Constants.BASE_URL
-import com.example.testnewsapp.data.post.PostApi
-import com.example.testnewsapp.data.post.PostRepositoryImpl
-import com.example.testnewsapp.domain.post.PostRepository
+import com.example.testnewsapp.data.comment.CommentApi
+import com.example.testnewsapp.data.comment.CommentRepositoryImpl
+import com.example.testnewsapp.domain.comment.CommentRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -14,19 +14,19 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
 @InstallIn(ViewModelComponent::class)
-abstract class PostModule {
+abstract class CommentModule {
 
     @Binds
-    abstract fun bindPostRepository(repo: PostRepositoryImpl):PostRepository
+    abstract fun bindCommentRepository(repo: CommentRepositoryImpl): CommentRepository
 
     companion object{
         @Provides
-        fun provideServiceApi(): PostApi {
+        fun provideServiceApi(): CommentApi {
             return Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(PostApi::class.java)
+                .create(CommentApi::class.java)
         }
     }
 }
