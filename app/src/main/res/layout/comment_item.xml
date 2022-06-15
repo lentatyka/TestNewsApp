@@ -12,21 +12,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/comment_rounded_recycler"
         android:layout_margin="8dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/shapeableImageView"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginEnd="16dp"
-            app:imageUrl= "@{comment.img}"
             app:error="@{@drawable/ic_error}"
-            app:loading="@{@drawable/ic_loading}"
+            app:imageUrl="@{comment.img}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/tv_comment_title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
+            app:loading="@{@drawable/ic_loading}"
             app:shapeAppearanceOverlay="@style/CustomImageView"
             app:srcCompat="@mipmap/ic_launcher" />
 
@@ -34,10 +33,11 @@
             android:id="@+id/tv_comment_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:text="@{comment.title}"
             android:textStyle="bold"
-            android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="@id/shapeableImageView"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/shapeableImageView"
             app:layout_constraintTop_toTopOf="@+id/shapeableImageView"
             tools:text="TITLE" />
@@ -46,10 +46,11 @@
             android:id="@+id/tv_comment_body"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:text="@{comment.body}"
+            app:layout_constraintEnd_toEndOf="@+id/tv_comment_title"
             app:layout_constraintStart_toStartOf="@id/tv_comment_title"
             app:layout_constraintTop_toBottomOf="@id/tv_comment_title"
-            android:layout_marginTop="32dp"
             tools:text="TITLE" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
