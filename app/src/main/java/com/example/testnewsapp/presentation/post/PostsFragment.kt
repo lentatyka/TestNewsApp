@@ -42,6 +42,8 @@ class PostsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setAdapter()
         setViewModel()
+        binding.viewmodel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
     }
 
     private fun setViewModel() {
